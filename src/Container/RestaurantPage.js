@@ -66,7 +66,7 @@ export class RestaurantPage extends Component {
 
                 <div className="container mt-5">
                     <h1 className="text-center text-primary my-5"><em><u>{this.props.location.data.restaurant_name}</u></em></h1>
-                    <div >
+                    <div    >
                         <ReactImageProcess
                             mode="waterMark"
                             waterMarkType="image"
@@ -77,7 +77,7 @@ export class RestaurantPage extends Component {
                             coordinate={[0, 0]}
 
                         >
-                            <img id="overlay-image" src={this.props.location.data.cover_image} />
+                            <img id="overlay-image" src={this.props.location.data.cover_image} height={window.innerHeight/2} />
                         </ReactImageProcess>
                     </div>
                     <a className="btn btn-large btn-primary mt-5" onClick={this.handleImageSave}>Share Image</a>
@@ -89,15 +89,15 @@ export class RestaurantPage extends Component {
                         this.state.modal
                             ?
                             <div className="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
-                                style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
-                                <div className="modal-dialog" role="document">
-                                    <div className="modal-content">
+                                style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.7)', }}>
+                                <div className="modal-dialog" role="document" >
+                                    <div className="modal-content" style={{width:'100%'}}>
                                         <div className="modal-header">
                                             <h5 className="modal-title" id="exampleModalLabel">Share Image</h5>
 
                                         </div>
                                         <div className="modal-body">
-                                            <img src={this.state.image} height={400} width={400} />
+                                            <img src={this.state.image} width={300} />
                                         </div>
                                         <div className="modal-footer">
                                             <a href={this.state.image} download={`${this.props.location.data.restaurant_name}.jpg`}><button type="button" className="btn btn-success" data-dismiss="modal">Save</button></a>
