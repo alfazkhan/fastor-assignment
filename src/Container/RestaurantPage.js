@@ -17,18 +17,17 @@ export class RestaurantPage extends Component {
         possiblePositions: ['bottomLeft', 'center', 'bottomRight', 'topLeft', 'topRight'],
         image: null,
         modal: false,
-        watermarkCoordinates : [0,0]
+        watermarkCoordinates: [0, 0]
     }
 
     componentDidMount() {
-        const mainImage = new Image()
-        mainImage.src = this.props.location.data.cover_image
+
 
         console.log(this.props.location.data)
     }
-    
+
     handleChange = (e) => {
-        
+
     }
 
     handleImageSave = () => {
@@ -40,7 +39,7 @@ export class RestaurantPage extends Component {
         });
     }
 
-    
+
 
     render() {
         if (typeof this.props.location.data === 'undefined') {
@@ -52,7 +51,7 @@ export class RestaurantPage extends Component {
 
         return (
             <div className="container mx-auto text-center">
-                <a className="btn btn-large btn-danger mt-5" onClick={()=>{this.props.history.goBack()}}>{"<< Back"}</a>
+                <a className="btn btn-large btn-danger mt-5" onClick={() => { this.props.history.goBack() }}>{"<< Back"}</a>
                 {/* <div className="row" id="overlay-image">
                     <div className="col-1" />
                     <div className="col-4" >
@@ -66,6 +65,7 @@ export class RestaurantPage extends Component {
                 </div> */}
 
                 <div className="container mt-5">
+                    <h1 className="text-center text-primary my-5"><em><u>{this.props.location.data.restaurant_name}</u></em></h1>
                     <div >
                         <ReactImageProcess
                             mode="waterMark"
@@ -83,7 +83,7 @@ export class RestaurantPage extends Component {
                     <a className="btn btn-large btn-primary mt-5" onClick={this.handleImageSave}>Share Image</a>
                 </div>
                 <div className="container mt-5">
-                    
+
 
                     {
                         this.state.modal
@@ -94,14 +94,14 @@ export class RestaurantPage extends Component {
                                     <div className="modal-content">
                                         <div className="modal-header">
                                             <h5 className="modal-title" id="exampleModalLabel">Share Image</h5>
-                                            
+
                                         </div>
                                         <div className="modal-body">
                                             <img src={this.state.image} height={400} width={400} />
                                         </div>
                                         <div className="modal-footer">
                                             <a href={this.state.image} download={`${this.props.location.data.restaurant_name}.jpg`}><button type="button" className="btn btn-success" data-dismiss="modal">Save</button></a>
-                                           <button type="button" className="btn btn-danger" onClick={()=>this.setState({modal:false})}>Cancel</button>
+                                            <button type="button" className="btn btn-danger" onClick={() => this.setState({ modal: false })}>Cancel</button>
                                         </div>
                                     </div>
                                 </div>

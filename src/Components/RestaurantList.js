@@ -24,6 +24,7 @@ export class RestaurantList extends Component {
     render() {
         return (
             <div className="container mt-5">
+                <h1 className="text-center text-primary my-5"><em><u>Restuarants</u></em></h1>
                 {
                     this.props.data.map(restaurant => {
                         return (
@@ -66,8 +67,8 @@ export class RestaurantList extends Component {
                                                 <div className="col-6 text-muted font-italic">
                                                     Cost for Two
                                                 </div>
-                                                
                                             </div>
+                                            
                                         </CardContent>
                                     </div>
                                 </div>

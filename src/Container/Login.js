@@ -92,10 +92,12 @@ export class Login extends Component {
                                 <h1 className="text-center text-primary">Login</h1>
                             </CardContent>
                             <form noValidate autoComplete="off" className="mx-5 my-5">
-                                <TextField id="standard-basic" className="my-3" label="Phone Number(+91)" fullWidth onChange={this.phoneNumberHandler} value={this.state.phone} />
+                                
                                 {this.state.otpField
                                     ? <TextField id="standard-basic" label="OTP" onChange={this.OTPHandler} fullWidth value={this.state.otp} />
-                                    : null}
+                                    : 
+                                    <TextField id="standard-basic" className="my-3" label="Phone Number(+91)" fullWidth onChange={this.phoneNumberHandler} value={this.state.phone} />
+                                    }
                             </form>
                         {/* </CardActionArea> */}
                         <CardActions className="text-center mx-auto">

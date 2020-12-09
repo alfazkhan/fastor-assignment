@@ -16,12 +16,12 @@ export class Header extends Component {
                     <CardActionArea>
                         <CardMedia
                             style={{ height: 100 }}
-                            image="https://images.pexels.com/photos/1405773/pexels-photo-1405773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                            image="https://images.pexels.com/photos/5623947/pexels-photo-5623947.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                             title="Contemplative Reptile"
                         >
                             <CardContent>
-                                <Typography gutterBottom variant="h3" component="h2">
-                                    Welcome! {this.props.name}
+                                <Typography gutterBottom variant="h3" component="h2" className="text-center">
+                                Welcome! <strong className="text-success">{this.props.name}</strong>
                             </Typography>
                             </CardContent>
                         </CardMedia>
